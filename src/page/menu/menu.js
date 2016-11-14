@@ -33,7 +33,7 @@ class Menu extends Component {
         };
         const sidebar = (<List >
             <div className="logo">
-                <img src="//o4j806krb.qnssl.com/public/images/cnodejs_light.svg"/>
+                <img src="http://o4j806krb.qnssl.com/public/images/cnodejs_light.svg"/>
             </div>
             {loginModal.isLogin?<List.Item
                 style={bgStyle}

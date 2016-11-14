@@ -73,10 +73,20 @@ export const replaceContent=(content)=>{
   content = content.replace(/<a(.*?)>/ig, function($){
     return $.slice(0,-1)+` target="_blank">`;
   });
+  //替换用户主页
   content=content.replace(/href="\/user/ig,'href="#/user');
+  //打包app时候有需要用到
+  content=content.replace(/src="\/\//ig,function () {
+    //app下的默认http:
+    if(window.location.protocol=='file:'){
+      return `src="http://`
+    }else {
+      return `src="${window.location.protocol}//`
+    }
+  });
   return content;
 };
 export const setTail=(content)=>{
   return `${content}
           使用[antd-moblie[cnode]版](https://github.com/dianjie/cnode)`
-}
+};
