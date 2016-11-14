@@ -43,10 +43,10 @@ gulp.task("webpack:build", function (callback) {
         gutil.log("[webpack:build]", stats.toString({
             colors: true
         }));
+        //复制文件夹
+        gulp.src(['src/lib/**'], {base: './src'})
+            .pipe(gulp.dest('dist'))
     });
-    //复制文件夹
-    gulp.src(['src/lib/**'], {base: './src'})
-        .pipe(gulp.dest('dist'))
 });
 //开启webpack-dev-server服务器
 gulp.task("webpack-dev-server", function () {

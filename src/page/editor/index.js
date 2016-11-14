@@ -33,7 +33,7 @@ class Editor extends Component{
         let {dispatch,loginModal:{accessToken},topicId}=this.props;
         this.setState({
             disabled:true, buttonText:'回复中...'
-        })
+        });
         ajax().post(`${apiHostUrl}/topic/${topicId}/replies`,{accesstoken:accessToken,content:setTail(content)}).then(function () {
             dispatch(loadTopicDetail(topicId));
             self.resetAction()
@@ -52,7 +52,7 @@ class Editor extends Component{
         }
     }
     render(){
-        let {disabled,buttonText}=this.state
+        let {disabled,buttonText}=this.state;
         return(
             <div id='editor_reply'  ref='editor_reply'>
                 <textarea className="none" id='editor_text'></textarea>
