@@ -13,12 +13,7 @@ a:link,a:visited,a:hover,a:active{color: #108ee9}
     bottom: .6rem;
     right: .6rem;
     display: none;
-}
-.back-top:before {
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    content: "\2912";
-    font-size: 4em;
+    font-size: 3em;
     color: #444;
 }
 /*颜色*/
