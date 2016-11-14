@@ -22,5 +22,5 @@
     npm install
 ### 开发测试 ###
     npm start
-#### 发布代码 ####
+### 发布代码 ###
     npm run build
