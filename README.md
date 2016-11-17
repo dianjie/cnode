@@ -1,5 +1,5 @@
 # antd-mobile[cnode]
-使用antd-mobile实现的cnode webapp社区：[线上访问](jjboom.net/cnode)
+使用antd-mobile实现的cnode webapp社区：[线上访问](http://jjboom.net/cnode)
 
 app版：[https://github.com/dianjie/cnodeapp](https://github.com/dianjie/cnodeapp)
 
