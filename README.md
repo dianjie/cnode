@@ -26,3 +26,7 @@ app版：[https://github.com/dianjie/cnodeapp](https://github.com/dianjie/cnodea
     npm start
 ### 发布代码 ###
     npm run build
+### 待优化点 ###
+  数据请求问题（已缓存state的数据不再请求接口）
+  滚动条记录问题（使用了antd-mobile ListView组件，暂不会跳到指定的记录位置！！）
+  等待发现....
