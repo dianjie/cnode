@@ -1,7 +1,7 @@
 {
-  "name": "xyinit",
+  "name": "react-cnode-antd-mobile",
   "version": "1.0.0",
-  "description": "a build for gulp and webpack",
+  "description": "react-cnode-antd-mobile",
   "scripts": {
     "start": "gulp",
     "build": "gulp build"
@@ -12,12 +12,19 @@
     "react-redux",
     "gulp"
   ],
-  "author": "xiaoyu",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dianjie/cnode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dianjie/cnode/issues"
+  },
+  "homepage": "https://github.com/dianjie/cnode#readme",
+  "author": "dianjie",
   "license": "ISC",
   "dependencies": {
     "@fdaciuk/ajax": "^2.1.2",
     "antd-mobile": "^0.9.5",
-    "rc-form": "^1.0.1",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-redux": "^4.4.5",
