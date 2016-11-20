@@ -44,11 +44,13 @@ export const menuOpenChange=()=>{
         dispatch(setMenuOpenState(!menu.open))
     }
 };
-export const setTopics=(list,page)=>{
+export const setTopics=(tabData,tabName)=>{
+    //tabData:{list:[],page:0}
+    //tabName:all
     return{
         type: 'set_topics_list',
-        list,
-        page
+        tabData,
+        tabName
     }
 };
 export const setTopicDetail=(detail)=>{
@@ -79,24 +81,15 @@ export const loadTopics=(tab,page,limit=20)=>{
     return dispatch=>{
         //显示等待加载动画
         dispatch(setSystemAnimating(true));
-        if (page === 1) {
-            dispatch(setTopicsRefreshing(true));
-        }else {
-            dispatch(setTopicsLoadingMore(true));
-        }
+        dispatch(setTopicsLoadingMore(true));
         callApi("获取主题类型列表",{tab,page,limit}).then(function (res) {
             dispatch(setSystemAnimating(false));
-            dispatch(setTopics(res.data,page));
-            //设置页码
-            dispatch(setTopicsPage(page));
-            if (page === 1) {
-                dispatch(setTopicsRefreshing(false));
-            }else{
+            let obj={list:res.data,page};
+            dispatch(setTopics(obj,tab));
+            setTimeout(function () {
                 dispatch(setTopicsLoadingMore(false));
-            }
-
+            },500);
         }).catch((error) => {
-            dispatch(setTopicsRefreshing(false));
             dispatch(setTopicsLoadingMore(false));
             dispatch(setSystemAnimating(false));
         });

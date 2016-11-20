@@ -17,17 +17,17 @@ class Menu extends Component {
         dispatch(menuOpenChange());
     }
     _loadMoreData(tabName) {
-        const {dispatch} = this.props;
-        document.body.scrollTop=document.documentElement.scrollTop=0;
+        const {dispatch,topics} = this.props;
         this.onOpenChange();
         hashHistory.push('tab='+tabName);
-        let topics=getTopicAndBg(tabName).type;
-        dispatch(setNavBarTitle(topics));
-        dispatch(loadTopics(tabName,1));
+        let title=getTopicAndBg(tabName).type;
+        dispatch(setNavBarTitle(title));
+        if(topics[tabName].page) return;
+        dispatch(loadTopics(tabName,++topics[tabName].page));
     }
     render() {
         let {menu,loginModal,account}=this.props;
-        let {avatar_url,loginname,id}=account.info;
+        let {avatar_url,loginname}=account.info;
         const bgStyle={
             backgroundColor:'rgb(247, 247, 247)'
         };
@@ -89,5 +89,6 @@ class Menu extends Component {
 export default connect(state=>({
     menu: state.menu,
     account:state.account,
+    topics: state.topics,
     loginModal:state.loginModal
 }))(Menu)

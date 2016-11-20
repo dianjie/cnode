@@ -96,7 +96,7 @@ class TopicReply extends Component{
         let {reply,index}=this.props;
         let {disabled,buttonText}=this.state
         return(
-            <div className="list_item" key={index}>
+            <div className="list_item" key={index}  id={reply.id}>
                 <div className="content_wrapper item_avatar">
                     <Link>
                         <img className="border_img" src={reply.author.avatar_url} />

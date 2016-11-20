@@ -88,5 +88,16 @@ export const replaceContent=(content)=>{
 };
 export const setTail=(content)=>{
   return `${content}
-          使用[antd-moblie[cnode]版](https://github.com/dianjie/cnode)`
+          使用[cnode[antd-moblie]web版](https://github.com/dianjie/cnode)`
+};
+export const getParameterByName=(name, url)=>{
+    if (!url) {
+        url = window.location.href;
+    }
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
 };
